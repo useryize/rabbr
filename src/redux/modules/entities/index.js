@@ -6,9 +6,11 @@ import shops from './shops.js';
 
 // 合并领域状态
 
-const combineReducers = combineReducers({
+const rootReducer = combineReducers({
     comments,
     orders,
     products,
     shops
 });
+
+export default rootReducer;

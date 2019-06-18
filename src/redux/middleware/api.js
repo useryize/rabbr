@@ -3,12 +3,12 @@ import { get } from '../../utils/request';
 export const FETCH_DATA = 'FETCH DATA';
 
 export default store => next => action => {
-    const callAPI = action[FETCH_DATA]
+    const callAPI = action[FETCH_DATA];
     if (typeof callAPI === 'undefined') {
         return next(action);
     }
 
-    const { endpoin, schema, types } = calAPI;
+    const { endpoin, schema, types } = callAPI;
     if (typeof endpoin !== 'string') {
         throw new Error('endpoin必须为字符串类型的URL');
     }
