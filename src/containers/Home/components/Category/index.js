@@ -9,7 +9,17 @@ class Category extends Component {
         const { sliderData } = this.props;
         return (
             <Fragment>
-                <Slider>
+                <Slider
+                    {
+                    ...{
+                        dots: true,
+                        infinite: true,
+                        speed: 500,
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                    }
+                >
                     {
                         sliderData && sliderData.map((item, index) => (
                             <div key={index}>
