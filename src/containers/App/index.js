@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import ErrorTost from '../../components/ErrorToast';
+import Home from '../Home';
 import { actions as appActions, getError } from '../../redux/modules/app';
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
         const { error, appActions: { clearError } } = this.props;
         return (
             <div>
+                <Home></Home>
                 {error ? <ErrorTost msg={error} clearError={clearError} /> : null}
             </div>
         )
