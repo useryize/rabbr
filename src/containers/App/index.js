@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import ErrorTost from '../../components/ErrorToast';
 import Home from '../Home';
 import { actions as appActions, getError } from '../../redux/modules/app';
+import './app.css';
 
 class App extends Component {
     render() {

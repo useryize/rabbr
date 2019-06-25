@@ -1,24 +1,23 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './styles.css'
+import './category.css';
 class Category extends Component {
     render() {
         const { sliderData } = this.props;
+        const sliderSettings = {
+            dots: true,
+            arrows: false,
+            slidesToShow: 1,
+            swipeToSlide: true,
+            autoplay: true
+        }
         return (
-            <Fragment>
+            <div className="category">
                 <Slider
-                    {
-                    ...{
-                        dots: true,
-                        infinite: true,
-                        speed: 500,
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                    }
+                    {...sliderSettings}
                 >
                     {
                         sliderData && sliderData.map((item, index) => (
@@ -35,8 +34,7 @@ class Category extends Component {
                         ))
                     }
                 </Slider>
-            </Fragment>
-
+            </div>
         );
     }
 }
