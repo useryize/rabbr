@@ -428,7 +428,8 @@ module.exports = function(webpackEnv) {
                 use: getStyleLoaders({
                   importLoaders: 1,
                   modules: true,
-                  sourceMap: isEnvProduction && shouldUseSourceMap
+                  sourceMap: isEnvProduction && shouldUseSourceMap,
+                  localIdentName: "[name]_[local]_[hash:base64:8]"
                 },
                   'less-loader'
                 ),
