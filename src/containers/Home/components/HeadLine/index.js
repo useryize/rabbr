@@ -5,7 +5,7 @@ class HeadLine extends Component {
     render() {
         console.error(styles);
         return (
-            <div className='red'>
+            <div className={styles.red}>
                 HeadLine
             </div>
         );
