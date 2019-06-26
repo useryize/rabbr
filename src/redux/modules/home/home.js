@@ -1,7 +1,7 @@
 // import { get } from '../../utils/request';
-import url from '../../utils/url';
-import { FETCH_DATA } from '../middleware/api';
-import schema from './entities/products';
+import url from '../../../utils/url';
+import { FETCH_DATA } from '../../middleware/api';
+import schema from '../entities/products';
 export const types = {
     FETCH_LIKES_REQUEST: "HOME/FETCH_LIKES_REQUEST", // 获取猜你喜欢 请求
     FETCH_LIKES_SUCCESS: "HOME/FETCH_LIKES_SUCCESS", // 获取猜你喜欢 请求成功

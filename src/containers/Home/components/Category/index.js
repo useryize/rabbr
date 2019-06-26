@@ -13,7 +13,7 @@ class Category extends Component {
             swipeToSlide: true,
             autoplay: true
         }
-        return <div className='red'>Category</div>
+        // return <div className='red'>Category</div>;
         return (
             <div className="category">
                 <Slider
@@ -39,8 +39,9 @@ class Category extends Component {
     }
 }
 const mapStateToProps = (state, action) => {
+    const { homeCategory } = state.homeModules;
     return {
-        ...state.homeCategory
+        ...homeCategory
     };
 }
 export default connect(mapStateToProps)(Category);
