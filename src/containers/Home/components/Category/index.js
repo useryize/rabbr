@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Slider from 'react-slick';
-
 import './category.css';
+
 class Category extends Component {
     render() {
         const { sliderData } = this.props;
@@ -13,7 +13,7 @@ class Category extends Component {
             swipeToSlide: true,
             autoplay: true
         }
-        // return <div className='red'>1</div>
+        return <div className='red'>Category</div>
         return (
             <div className="category">
                 <Slider

@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import styles from './HeadLine.less';
-class index extends Component {
+
+class HeadLine extends Component {
     render() {
         console.error(styles);
         return (
-            <div className={styles.nihao}>
-                a
+            <div className='red'>
+                HeadLine
             </div>
         );
     }
 }
 
-export default index;
+export default HeadLine;
