@@ -2,9 +2,11 @@ import { combineReducers } from 'redux';
 import home from './home';
 import homeCategory from './homeCategory';
 import homeHeadLine from './homeHeadLine';
+import homeDiscount from './homeDiscount';
 const rootReducer = combineReducers({
     home,
-    homeCategory,
-    homeHeadLine
+    homeCategory, // 导航
+    homeHeadLine, // 点评头条
+    homeDiscount, // 超值优惠
 });
 export default rootReducer;

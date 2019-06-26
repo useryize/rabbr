@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Slider from 'react-slick';
-import './category.css';
+import styles from './category.less';
 
 class Category extends Component {
     render() {
@@ -11,11 +11,11 @@ class Category extends Component {
             arrows: false,
             slidesToShow: 1,
             swipeToSlide: true,
-            autoplay: true
+            autoplay: false
         }
-        // return <div className='red'>Category</div>;
+
         return (
-            <div className="category">
+            <div className={styles.category}>
                 <Slider
                     {...sliderSettings}
                 >
@@ -23,10 +23,10 @@ class Category extends Component {
                         sliderData && sliderData.map((item, index) => (
                             <div key={index}>
                                 {item.map((subItem, indexItem) => (
-                                    <div className="category__section" key={indexItem}>
-                                        <img alt="" className="category__icon" src={subItem.src} />
+                                    <div className={styles.category_section} key={indexItem}>
+                                        <img alt="" className={styles.category_icon} src={subItem.src} />
                                         <div>
-                                            <span className="category__text">{subItem.name}</span>
+                                            <span className={styles.category_text}>{subItem.name}</span>
                                         </div>
                                     </div>
                                 ))}
