@@ -5,7 +5,6 @@ import styles from './Discount.less';
 class Discount extends Component {
     render() {
         const { dataPro } = this.props;
-        console.error(dataPro);
         return (
             <div className={styles.discount}>
                 <div className={styles.discount_header}>
