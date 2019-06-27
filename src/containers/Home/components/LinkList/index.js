@@ -9,9 +9,10 @@ class LinkList extends Component {
         super(props);
         this.state = {
             data: props.dataInfo,
-            loadingState: 1
+            loadingState: 1, // 是否加载 更多数据
         }
         this.mayRef = React.createRef();
+        this.isLoading = true; // 是否销毁滚动事件
     }
     render() {
         const { data, loadingState } = this.state;
@@ -34,13 +35,30 @@ class LinkList extends Component {
         )
     }
     componentDidMount() {
+        // 绑定滚动事件
         document.addEventListener('scroll', this.scrollSlice);
     }
+    componentDidUpdate() {
+        const { loadingState } = this.state;
+        // 当加载两次后 显示为查看更多 销毁滚动事件 释放内存
+        if (loadingState >= 3 && this.isLoading) {
+            this.removeEvent();
+            this.isLoading = false;
+        }
+
+    }
+    componentWillUnmount () {
+        // 页面销毁同时销魂绑定事件
+        this.isLoading && this.removeEvent();
+    }
+    removeEvent = () => {
+        document.removeEventListener("scroll", this.scrollSlice);
+    }
     scrollSlice = () => {
-        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        let documentHeight = document.documentElement.clientHeight;
-        let LinkListTop = this.mayRef.current.offsetTop;
-        let LinkListHeight = this.mayRef.current.offsetHeight;
+        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop; // 滚动条高度
+        let documentHeight = document.documentElement.clientHeight; // 视口高度
+        let LinkListTop = this.mayRef.current.offsetTop; // 滑动块距离顶部高度
+        let LinkListHeight = this.mayRef.current.offsetHeight; // 滑动快高度
         const { data, loadingState } = this.state;
         if (scrollTop >= LinkListHeight + LinkListTop - documentHeight && loadingState < 3) {
             let newData = data.concat(data);
