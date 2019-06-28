@@ -73,8 +73,8 @@ module.exports = function(webpackEnv) {
   // common function to get style loaders
   const getStyleLoaders = (cssOptions, preProcessor) => {
     const loaders = [
-      isEnvDevelopment && require.resolve('style-loader'),
-      isEnvProduction && {
+    //   isEnvDevelopment && require.resolve('style-loader'),
+      (isEnvProduction || isEnvDevelopment) && {
         loader: MiniCssExtractPlugin.loader,
         options: Object.assign(
           {},
@@ -559,7 +559,7 @@ module.exports = function(webpackEnv) {
       // See https://github.com/facebook/create-react-app/issues/186
       isEnvDevelopment &&
         new WatchMissingNodeModulesPlugin(paths.appNodeModules),
-        isEnvProduction &&
+        (isEnvProduction || isEnvDevelopment) &&
         new MiniCssExtractPlugin({
           // Options similar to the same options in webpackOptions.output
           // both options are optional
