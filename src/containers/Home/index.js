@@ -5,6 +5,7 @@ import Discount from './components/Discount';
 import LinkList from './components/LinkList';
 import HomeHead from './components/HomeHead';
 import Banner from './components/Banner';
+import Activity from './components/Activity';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -16,6 +17,7 @@ class Home extends Component {
                 <Banner></Banner>
                 <Slider></Slider>
                 <HeadLine></HeadLine>
+                <Activity></Activity>
                 <Discount></Discount>
                 <LinkList></LinkList>
             </Fragment>

@@ -11,7 +11,7 @@ class Category extends Component {
             arrows: false,
             slidesToShow: 1,
             swipeToSlide: true,
-            autoplay: false
+            autoplay: true
         }
 
         return (
